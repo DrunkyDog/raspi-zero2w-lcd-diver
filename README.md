@@ -64,8 +64,6 @@
 ## ติดตั้งบนเครื่องใหม่
 
 ```bash
-scp -r Raspberry_Pi_Zero_2inch8_Touch_LCD_HAT/ user@pi:~/
-ssh user@pi
 cd ~/Raspberry_Pi_Zero_2inch8_Touch_LCD_HAT
 sudo ./install.sh
 sudo reboot
