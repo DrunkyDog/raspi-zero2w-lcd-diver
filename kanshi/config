@@ -1,0 +1,7 @@
+# จอ 2.8" SHCHV ILI9341 บน labwc/Wayland — ติดตั้งที่ ~/.config/kanshi/config
+# flipped-180: จอติดตั้งกลับหัวเทียบทิศ MADCTL ใน panel.bin ต้องพลิกที่ compositor
+# scale 0.6: ขยายพื้นที่ desktop เชิงตรรกะเป็น ~533x400 บนจอ 320x240
+# หมายเหตุ: kanshi อ่านไฟล์นี้เฉพาะตอน start — แก้แล้วต้อง restart kanshi หรือ reboot
+profile {
+		output SPI-1 enable mode 320x240@60.000 position 0,0 transform flipped-180 scale 0.6
+}

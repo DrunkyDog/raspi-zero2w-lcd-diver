@@ -1,0 +1,13 @@
+[Unit]
+Description=Blank SPI panel (fb0) to black on shutdown
+Before=display-manager.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/true
+ExecStop=/usr/local/bin/blank-panel.sh
+TimeoutStopSec=6
+
+[Install]
+WantedBy=graphical.target
