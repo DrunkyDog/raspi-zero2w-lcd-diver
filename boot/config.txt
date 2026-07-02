@@ -54,8 +54,6 @@ dtoverlay=nospi10
 [all]
 enable_uart=1
 dtparam=act_led_trigger=actpwr
-dtoverlay=mipi-dbi-spi
-
 
 # ===== [ili9341] จอ SHCHV MPI2411 ILI9341 320x240 ผ่าน mipi-dbi-spi (KMS) =====
 dtoverlay=mipi-dbi-spi,spi0-0,speed=16000000,write-only
