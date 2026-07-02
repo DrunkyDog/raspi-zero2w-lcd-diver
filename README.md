@@ -3,11 +3,6 @@
 ไฟล์ทั้งหมด export จากเครื่องจริง `project-alice` (Pi Zero 2 W, Raspberry Pi OS Bookworm 64-bit)
 เมื่อ 2026-07-02 — สภาพที่จอแสดงผล + touch ใช้งานได้แล้ว
 
-> **หมายเหตุ:** ชุดไฟล์ของ **Waveshare Zero LCD HAT (A) 3 จอ** แยกอยู่ที่โฟลเดอร์
-> พี่น้อง [`Raspberry_Pi_Zero_LCD_HAT_A/`](../Raspberry_Pi_Zero_LCD_HAT_A/)
-> (deploy + ทดสอบผ่านแล้วทั้งสามจอ) — **สลับ HAT = รัน install.sh ของชุดนั้น ๆ
-> ตัวเดียวจบ** เพราะแต่ละ install.sh ล้าง config ของอีกชุดออกให้อัตโนมัติก่อนติดตั้ง
-
 ## สถาปัตยกรรม
 
 ใช้ **DRM/KMS สมัยใหม่** (ไม่ใช่ fbtft/fbcp แบบเก่า):
@@ -69,13 +64,11 @@ sudo ./install.sh
 sudo reboot
 ```
 
-ถอนการติดตั้ง: `sudo ./install.sh --uninstall`
-
+ถอนการติดตั้ง: 
+```bash
+`sudo ./install.sh --uninstall`
+```
 ## หมายเหตุ
-
-- `boot/config.txt` (สำเนาจากเครื่องจริง) มีบรรทัด `dtoverlay=mipi-dbi-spi`
-  เปล่า ๆ ซ้ำอยู่หนึ่งบรรทัดเหนือบล็อกจอ — เป็นของตกค้าง ไม่จำเป็น
-  `install.sh` เขียนเฉพาะบล็อกที่ถูกต้อง (มี marker ครอบ รันซ้ำได้ไม่ซ้ำซ้อน)
 - ปรับ rotation: แก้ค่า MADCTL (`command 0x36 0x68`) ใน `firmware/panel.mipi`
   แล้ว rebuild เป็น panel.bin หรือเพิ่ม `dtparam=rotation=90|180|270` ที่ overlay
 - calibration matrix ปัจจุบัน: `0 1.16006 -0.04618 -1.16418 0 1.07335`
